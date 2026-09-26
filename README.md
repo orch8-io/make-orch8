@@ -57,6 +57,12 @@ No dependencies are needed (Node ≥ 20).
 
 ## Import into Make
 
+Get the app definition either by cloning this repo at a tag (`git clone --branch v0.1.0 https://github.com/orch8-io/make-orch8.git`) or by downloading
+`make-orch8-v0.1.0.zip` from the [GitHub Release](https://github.com/orch8-io/make-orch8/releases) and unzipping it. The zip holds `makecomapp.json`
+and every component folder (tests excluded), laid out exactly as the Make Apps SDK expects. Open that folder in VS Code, then follow option A.
+
+The app is not in Make's public app directory. Deploying it as below creates a **private custom app** in your own Make organization, which works immediately.
+
 ### Option A: VS Code (Make Apps SDK extension, recommended)
 
 1. Install the **Make Apps Editor** extension in VS Code. Create a Make API token with the `sdk-apps:*` scopes (Profile → API access).
@@ -81,6 +87,11 @@ In Make, go to **Custom apps → Create a new app**. Then create each component 
 | Each module → Communication, Static parameters, Mappable parameters, Interface, Samples (and Epoch for Watch Instances) | `modules/<name>/<name>.<tab>.iml.json` |
 
 Use the module ids and types from `makecomapp.json` (`components.module`), for example `watchInstances` → *Trigger (polling)* and `watchEvents` → *Instant trigger* bound to webhook `orch8Events`.
+
+## CI and releases
+
+`.github/workflows/ci.yml` runs `npm test` on every push and PR to `main`. Pushing a tag `vX.Y.Z` (must equal `version` in `package.json`) runs the tests
+and creates a GitHub Release with `make-orch8-vX.Y.Z.zip`. Make has no deploy API key flow wired into CI; deploying stays a manual step from VS Code.
 
 ## Publishing and approval (not done yet, manual)
 
