@@ -1,0 +1,27 @@
+{
+    "url": "/instances",
+    "method": "POST",
+    "body": {
+        "sequence_id": "{{parameters.sequenceId}}",
+        "tenant_id": "{{connection.tenantId}}",
+        "namespace": "{{ifempty(parameters.namespace, 'default')}}",
+        "priority": "{{ifempty(parameters.priority, 'Normal')}}",
+        "timezone": "{{ifempty(parameters.timezone, 'UTC')}}",
+        "context": {
+            "data": "{{if(parameters.data, parseJSON(parameters.data), undefined)}}",
+            "config": "{{if(parameters.config, parseJSON(parameters.config), undefined)}}"
+        },
+        "metadata": "{{if(parameters.metadata, parseJSON(parameters.metadata), undefined)}}",
+        "idempotency_key": "{{parameters.idempotencyKey}}",
+        "concurrency_key": "{{parameters.concurrencyKey}}",
+        "max_concurrency": "{{parameters.maxConcurrency}}",
+        "next_fire_at": "{{parameters.nextFireAt}}",
+        "dry_run": "{{ifempty(parameters.dryRun, false)}}"
+    },
+    "response": {
+        "output": {
+            "id": "{{body.id}}",
+            "deduplicated": "{{ifempty(body.deduplicated, false)}}"
+        }
+    }
+}

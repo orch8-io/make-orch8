@@ -1,0 +1,8 @@
+[
+    {
+        "name": "instanceId",
+        "type": "uuid",
+        "label": "Instance ID",
+        "required": true
+    }
+]

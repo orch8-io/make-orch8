@@ -1,0 +1,32 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Job ID"
+    },
+    {
+        "name": "instance_id",
+        "type": "text",
+        "label": "Instance ID"
+    },
+    {
+        "name": "handler",
+        "type": "text",
+        "label": "Handler"
+    },
+    {
+        "name": "status",
+        "type": "text",
+        "label": "Status"
+    },
+    {
+        "name": "created_at",
+        "type": "date",
+        "label": "Created at"
+    },
+    {
+        "name": "run_at",
+        "type": "date",
+        "label": "Run at"
+    }
+]

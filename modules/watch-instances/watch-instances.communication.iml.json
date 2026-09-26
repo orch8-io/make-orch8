@@ -1,0 +1,21 @@
+{
+    "url": "/instances",
+    "method": "GET",
+    "qs": {
+        "state": "{{if(parameters.states, join(parameters.states, ','), 'completed,failed')}}",
+        "sequence_id": "{{parameters.sequenceId}}",
+        "namespace": "{{parameters.namespace}}",
+        "limit": "{{ifempty(parameters.limit, 100)}}"
+    },
+    "response": {
+        "iterate": "{{body.items}}",
+        "output": "{{item}}",
+        "limit": "{{ifempty(parameters.limit, 100)}}",
+        "trigger": {
+            "type": "date",
+            "order": "desc",
+            "id": "{{item.id}}",
+            "date": "{{item.updated_at}}"
+        }
+    }
+}

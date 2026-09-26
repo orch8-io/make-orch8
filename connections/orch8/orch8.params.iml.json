@@ -1,0 +1,26 @@
+[
+    {
+        "name": "baseUrl",
+        "type": "url",
+        "label": "Engine base URL",
+        "required": true,
+        "editable": true,
+        "help": "Root URL of your Orch8 engine without a trailing slash and without /api/v1, e.g. `https://orch8.example.com`."
+    },
+    {
+        "name": "apiKey",
+        "type": "password",
+        "label": "API key",
+        "required": true,
+        "editable": true,
+        "help": "Sent as the `x-api-key` header. Use a tenant-scoped key with the `operator` capability (or `approver` if you only resolve approvals)."
+    },
+    {
+        "name": "tenantId",
+        "type": "text",
+        "label": "Tenant ID",
+        "required": true,
+        "editable": true,
+        "help": "Sent as the `x-tenant-id` header. Must match the tenant bound to a tenant-scoped API key."
+    }
+]

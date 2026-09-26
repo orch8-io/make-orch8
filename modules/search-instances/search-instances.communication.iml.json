@@ -1,0 +1,16 @@
+{
+    "url": "/instances",
+    "method": "GET",
+    "qs": {
+        "state": "{{if(parameters.states, join(parameters.states, ','), undefined)}}",
+        "sequence_id": "{{parameters.sequenceId}}",
+        "namespace": "{{parameters.namespace}}",
+        "{{if(parameters.metadataKey, 'metadata.' + parameters.metadataKey, 'metadata._unset')}}": "{{if(parameters.metadataKey, parameters.metadataValue, undefined)}}",
+        "limit": "{{ifempty(parameters.limit, 100)}}"
+    },
+    "response": {
+        "iterate": "{{body.items}}",
+        "output": "{{item}}",
+        "limit": "{{ifempty(parameters.limit, 100)}}"
+    }
+}

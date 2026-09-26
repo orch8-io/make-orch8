@@ -1,0 +1,50 @@
+{
+    "baseUrl": "{{connection.baseUrl}}/api/v1",
+    "headers": {
+        "x-api-key": "{{connection.apiKey}}",
+        "x-tenant-id": "{{connection.tenantId}}",
+        "content-type": "application/json"
+    },
+    "response": {
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error.code, 'error')}}: {{ifempty(body.error.message, body)}}",
+            "400": {
+                "type": "DataError",
+                "message": "[400] {{body.error.message}}"
+            },
+            "401": {
+                "type": "InvalidAccessTokenError",
+                "message": "[401] {{body.error.message}}"
+            },
+            "403": {
+                "type": "InvalidAccessTokenError",
+                "message": "[403] {{body.error.message}}"
+            },
+            "404": {
+                "type": "DataError",
+                "message": "[404] {{body.error.message}}"
+            },
+            "409": {
+                "type": "DataError",
+                "message": "[409] {{body.error.message}}"
+            },
+            "422": {
+                "type": "DataError",
+                "message": "[422] {{body.error.message}}"
+            },
+            "429": {
+                "type": "RateLimitError",
+                "message": "[429] {{body.error.message}}"
+            },
+            "503": {
+                "type": "ConnectionError",
+                "message": "[503] {{body.error.message}}"
+            }
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.x-api-key"
+        ]
+    }
+}

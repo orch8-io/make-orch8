@@ -1,0 +1,20 @@
+[
+    {
+        "label": "Instances",
+        "modules": [
+            "watchInstances",
+            "watchEvents",
+            "startInstance",
+            "getInstance",
+            "searchInstances",
+            "sendSignal",
+            "resolveApproval"
+        ]
+    },
+    {
+        "label": "Jobs",
+        "modules": [
+            "enqueueJob"
+        ]
+    }
+]

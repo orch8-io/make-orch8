@@ -1,0 +1,12 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Instance ID"
+    },
+    {
+        "name": "deduplicated",
+        "type": "boolean",
+        "label": "Deduplicated"
+    }
+]

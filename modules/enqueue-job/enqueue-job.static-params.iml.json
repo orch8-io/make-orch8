@@ -1,0 +1,8 @@
+[
+    {
+        "type": "banner",
+        "title": "Requires a newer engine",
+        "theme": "warning",
+        "text": "The Jobs API (POST /api/v1/jobs) ships in the engine release after the current one. Older engines answer 404."
+    }
+]

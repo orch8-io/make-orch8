@@ -1,0 +1,26 @@
+{
+    "url": "{{parameters.baseUrl}}/api/v1/sequences",
+    "method": "GET",
+    "qs": {
+        "limit": 1
+    },
+    "headers": {
+        "x-api-key": "{{parameters.apiKey}}",
+        "x-tenant-id": "{{parameters.tenantId}}"
+    },
+    "response": {
+        "valid": "{{statusCode >= 200 && statusCode < 300}}",
+        "error": {
+            "message": "[{{statusCode}}] {{ifempty(body.error.message, 'Could not reach the Orch8 API with these credentials.')}}"
+        },
+        "metadata": {
+            "type": "text",
+            "value": "{{parameters.tenantId}} @ {{parameters.baseUrl}}"
+        }
+    },
+    "log": {
+        "sanitize": [
+            "request.headers.x-api-key"
+        ]
+    }
+}

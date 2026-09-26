@@ -1,0 +1,22 @@
+[
+    {
+        "name": "event_type",
+        "type": "text",
+        "label": "Event type"
+    },
+    {
+        "name": "instance_id",
+        "type": "text",
+        "label": "Instance ID"
+    },
+    {
+        "name": "timestamp",
+        "type": "date",
+        "label": "Timestamp"
+    },
+    {
+        "name": "data",
+        "type": "any",
+        "label": "Data"
+    }
+]

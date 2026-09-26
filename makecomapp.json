@@ -1,0 +1,166 @@
+{
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "general/base.iml.json",
+        "common": "general/common.json",
+        "readme": "README.md",
+        "groups": "general/groups.json"
+    },
+    "components": {
+        "connection": {
+            "orch8": {
+                "label": "Orch8",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "connections/orch8/orch8.communication.iml.json",
+                    "params": "connections/orch8/orch8.params.iml.json",
+                    "common": "connections/orch8/orch8.common.json"
+                }
+            }
+        },
+        "webhook": {
+            "orch8Events": {
+                "label": "Orch8 engine events",
+                "webhookType": "web",
+                "connection": null,
+                "codeFiles": {
+                    "communication": "webhooks/orch8-events/orch8-events.communication.iml.json",
+                    "params": "webhooks/orch8-events/orch8-events.params.iml.json"
+                }
+            }
+        },
+        "module": {
+            "startInstance": {
+                "label": "Start a Workflow Instance",
+                "description": "Starts a new instance of a stored Orch8 sequence.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/start-instance/start-instance.communication.iml.json",
+                    "staticParams": "modules/start-instance/start-instance.static-params.iml.json",
+                    "mappableParams": "modules/start-instance/start-instance.mappable-params.iml.json",
+                    "interface": "modules/start-instance/start-instance.interface.iml.json",
+                    "samples": "modules/start-instance/start-instance.samples.iml.json"
+                }
+            },
+            "sendSignal": {
+                "label": "Send a Signal",
+                "description": "Sends pause/resume/cancel/update_context or a custom signal to a running instance.",
+                "moduleType": "action",
+                "actionCrud": "update",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/send-signal/send-signal.communication.iml.json",
+                    "staticParams": "modules/send-signal/send-signal.static-params.iml.json",
+                    "mappableParams": "modules/send-signal/send-signal.mappable-params.iml.json",
+                    "interface": "modules/send-signal/send-signal.interface.iml.json",
+                    "samples": "modules/send-signal/send-signal.samples.iml.json"
+                }
+            },
+            "getInstance": {
+                "label": "Get an Instance",
+                "description": "Returns an instance's state, context, and metadata.",
+                "moduleType": "action",
+                "actionCrud": "read",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/get-instance/get-instance.communication.iml.json",
+                    "staticParams": "modules/get-instance/get-instance.static-params.iml.json",
+                    "mappableParams": "modules/get-instance/get-instance.mappable-params.iml.json",
+                    "interface": "modules/get-instance/get-instance.interface.iml.json",
+                    "samples": "modules/get-instance/get-instance.samples.iml.json"
+                }
+            },
+            "searchInstances": {
+                "label": "Search Instances",
+                "description": "Lists instances filtered by state, sequence, namespace and a metadata key.",
+                "moduleType": "search",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/search-instances/search-instances.communication.iml.json",
+                    "staticParams": "modules/search-instances/search-instances.static-params.iml.json",
+                    "mappableParams": "modules/search-instances/search-instances.mappable-params.iml.json",
+                    "interface": "modules/search-instances/search-instances.interface.iml.json",
+                    "samples": "modules/search-instances/search-instances.samples.iml.json"
+                }
+            },
+            "enqueueJob": {
+                "label": "Enqueue a Background Job",
+                "description": "Enqueues a single background job for a handler (POST /jobs). Requires Orch8 engine newer than the current release.",
+                "moduleType": "action",
+                "actionCrud": "create",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/enqueue-job/enqueue-job.communication.iml.json",
+                    "staticParams": "modules/enqueue-job/enqueue-job.static-params.iml.json",
+                    "mappableParams": "modules/enqueue-job/enqueue-job.mappable-params.iml.json",
+                    "interface": "modules/enqueue-job/enqueue-job.interface.iml.json",
+                    "samples": "modules/enqueue-job/enqueue-job.samples.iml.json"
+                }
+            },
+            "resolveApproval": {
+                "label": "Resolve an Approval",
+                "description": "Answers a human-in-the-loop gate (custom:human_input:<block>) with a choice value.",
+                "moduleType": "action",
+                "actionCrud": "update",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/resolve-approval/resolve-approval.communication.iml.json",
+                    "staticParams": "modules/resolve-approval/resolve-approval.static-params.iml.json",
+                    "mappableParams": "modules/resolve-approval/resolve-approval.mappable-params.iml.json",
+                    "interface": "modules/resolve-approval/resolve-approval.interface.iml.json",
+                    "samples": "modules/resolve-approval/resolve-approval.samples.iml.json"
+                }
+            },
+            "watchInstances": {
+                "label": "Watch Instances",
+                "description": "Triggers when an instance enters one of the selected states (default: completed or failed).",
+                "moduleType": "trigger",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "modules/watch-instances/watch-instances.communication.iml.json",
+                    "epoch": "modules/watch-instances/watch-instances.epoch.iml.json",
+                    "staticParams": "modules/watch-instances/watch-instances.static-params.iml.json",
+                    "mappableParams": "modules/watch-instances/watch-instances.mappable-params.iml.json",
+                    "interface": "modules/watch-instances/watch-instances.interface.iml.json",
+                    "samples": "modules/watch-instances/watch-instances.samples.iml.json"
+                }
+            },
+            "watchEvents": {
+                "label": "Watch Engine Events (Instant)",
+                "description": "Receives the engine's outbound webhook events (instance.completed, instance.failed, instance.sla_breached).",
+                "moduleType": "instant_trigger",
+                "connection": null,
+                "webhook": "orch8Events",
+                "codeFiles": {
+                    "communication": "modules/watch-events/watch-events.communication.iml.json",
+                    "staticParams": "modules/watch-events/watch-events.static-params.iml.json",
+                    "mappableParams": "modules/watch-events/watch-events.mappable-params.iml.json",
+                    "interface": "modules/watch-events/watch-events.interface.iml.json",
+                    "samples": "modules/watch-events/watch-events.samples.iml.json"
+                }
+            }
+        },
+        "rpc": {
+            "listSequences": {
+                "label": "List sequences",
+                "connection": "orch8",
+                "codeFiles": {
+                    "communication": "rpcs/list-sequences/list-sequences.communication.iml.json",
+                    "params": "rpcs/list-sequences/list-sequences.params.iml.json"
+                }
+            }
+        },
+        "function": {}
+    },
+    "origins": [
+        {
+            "label": "Orch8 (set appId after creating the app in Make)",
+            "baseUrl": "https://eu1.make.com/api",
+            "appId": "orch8-CHANGE-ME",
+            "appVersion": 1,
+            "apikeyFile": ".secrets/apikey"
+        }
+    ]
+}

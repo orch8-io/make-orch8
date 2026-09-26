@@ -1,0 +1,18 @@
+{
+    "url": "/jobs",
+    "method": "POST",
+    "body": {
+        "handler": "{{parameters.handler}}",
+        "payload": "{{if(parameters.payload, parseJSON(parameters.payload), undefined)}}",
+        "queue": "{{parameters.queue}}",
+        "priority": "{{parameters.priority}}",
+        "retry": "{{if(parameters.retry, parseJSON(parameters.retry), undefined)}}",
+        "delay_ms": "{{parameters.delayMs}}",
+        "run_at": "{{parameters.runAt}}",
+        "idempotency_key": "{{parameters.idempotencyKey}}",
+        "metadata": "{{if(parameters.metadata, parseJSON(parameters.metadata), undefined)}}"
+    },
+    "response": {
+        "output": "{{body}}"
+    }
+}

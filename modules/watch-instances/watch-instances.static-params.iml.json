@@ -1,0 +1,64 @@
+[
+    {
+        "name": "states",
+        "type": "select",
+        "label": "States",
+        "multiple": true,
+        "options": [
+            {
+                "label": "Scheduled",
+                "value": "scheduled"
+            },
+            {
+                "label": "Running",
+                "value": "running"
+            },
+            {
+                "label": "Waiting",
+                "value": "waiting"
+            },
+            {
+                "label": "Paused",
+                "value": "paused"
+            },
+            {
+                "label": "Completed",
+                "value": "completed"
+            },
+            {
+                "label": "Failed",
+                "value": "failed"
+            },
+            {
+                "label": "Cancelled",
+                "value": "cancelled"
+            }
+        ],
+        "default": [
+            "completed",
+            "failed"
+        ]
+    },
+    {
+        "name": "sequenceId",
+        "type": "select",
+        "label": "Sequence",
+        "options": "rpc://listSequences"
+    },
+    {
+        "name": "namespace",
+        "type": "text",
+        "label": "Namespace"
+    },
+    {
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 100,
+        "required": true,
+        "validate": {
+            "max": 1000
+        },
+        "help": "Maximum instances returned per poll (engine max 1000). The list is ordered by updated_at descending."
+    }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "name": "instanceId",
+        "type": "uuid",
+        "label": "Instance ID",
+        "required": true
+    },
+    {
+        "name": "signalType",
+        "type": "select",
+        "label": "Signal",
+        "required": true,
+        "options": {
+            "store": [
+                {
+                    "label": "Pause",
+                    "value": "pause"
+                },
+                {
+                    "label": "Resume",
+                    "value": "resume"
+                },
+                {
+                    "label": "Cancel",
+                    "value": "cancel"
+                },
+                {
+                    "label": "Update context",
+                    "value": "update_context"
+                },
+                {
+                    "label": "Custom",
+                    "value": "custom",
+                    "nested": [
+                        {
+                            "name": "customSignal",
+                            "type": "text",
+                            "label": "Custom signal name",
+                            "required": true,
+                            "help": "Name the sequence waits on, e.g. `approval_granted`. Sent as {\"custom\": \"<name>\"}."
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    {
+        "name": "payload",
+        "type": "json",
+        "label": "Payload (JSON)"
+    }
+]

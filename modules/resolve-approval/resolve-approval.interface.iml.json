@@ -1,0 +1,22 @@
+[
+    {
+        "name": "signal_id",
+        "type": "text",
+        "label": "Signal ID"
+    },
+    {
+        "name": "instance_id",
+        "type": "text",
+        "label": "Instance ID"
+    },
+    {
+        "name": "block_id",
+        "type": "text",
+        "label": "Block ID"
+    },
+    {
+        "name": "value",
+        "type": "text",
+        "label": "Choice value"
+    }
+]

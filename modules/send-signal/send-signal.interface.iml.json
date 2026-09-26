@@ -1,0 +1,12 @@
+[
+    {
+        "name": "signal_id",
+        "type": "text",
+        "label": "Signal ID"
+    },
+    {
+        "name": "instance_id",
+        "type": "text",
+        "label": "Instance ID"
+    }
+]

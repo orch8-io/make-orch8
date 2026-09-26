@@ -1,0 +1,56 @@
+[
+    {
+        "name": "handler",
+        "type": "text",
+        "label": "Handler",
+        "required": true,
+        "help": "Registered handler name, e.g. `send_email`."
+    },
+    {
+        "name": "payload",
+        "type": "json",
+        "label": "Payload (JSON)"
+    },
+    {
+        "name": "queue",
+        "type": "text",
+        "label": "Queue",
+        "advanced": true
+    },
+    {
+        "name": "priority",
+        "type": "text",
+        "label": "Priority",
+        "advanced": true
+    },
+    {
+        "name": "retry",
+        "type": "json",
+        "label": "Retry policy (JSON)",
+        "advanced": true
+    },
+    {
+        "name": "delayMs",
+        "type": "uinteger",
+        "label": "Delay (ms)",
+        "advanced": true
+    },
+    {
+        "name": "runAt",
+        "type": "date",
+        "label": "Run at",
+        "advanced": true
+    },
+    {
+        "name": "idempotencyKey",
+        "type": "text",
+        "label": "Idempotency key",
+        "advanced": true
+    },
+    {
+        "name": "metadata",
+        "type": "json",
+        "label": "Metadata (JSON)",
+        "advanced": true
+    }
+]

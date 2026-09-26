@@ -1,0 +1,7 @@
+{
+    "url": "/instances/{{parameters.instanceId}}",
+    "method": "GET",
+    "response": {
+        "output": "{{body}}"
+    }
+}

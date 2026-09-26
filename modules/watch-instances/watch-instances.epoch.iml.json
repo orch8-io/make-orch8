@@ -1,0 +1,9 @@
+{
+    "response": {
+        "limit": 300,
+        "output": {
+            "label": "{{item.id}} ({{item.state}})",
+            "date": "{{item.updated_at}}"
+        }
+    }
+}

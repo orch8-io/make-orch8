@@ -1,0 +1,21 @@
+{
+    "url": "/instances/{{parameters.instanceId}}/signals",
+    "method": "POST",
+    "body": {
+        "signal_type": {
+            "custom": "human_input:{{parameters.blockId}}"
+        },
+        "payload": {
+            "value": "{{parameters.value}}",
+            "comment": "{{parameters.comment}}"
+        }
+    },
+    "response": {
+        "output": {
+            "signal_id": "{{body.signal_id}}",
+            "instance_id": "{{parameters.instanceId}}",
+            "block_id": "{{parameters.blockId}}",
+            "value": "{{parameters.value}}"
+        }
+    }
+}

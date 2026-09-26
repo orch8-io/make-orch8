@@ -1,0 +1,34 @@
+[
+    {
+        "condition": "{{parameters.signalType != 'custom'}}",
+        "url": "/instances/{{parameters.instanceId}}/signals",
+        "method": "POST",
+        "body": {
+            "signal_type": "{{parameters.signalType}}",
+            "payload": "{{if(parameters.payload, parseJSON(parameters.payload), undefined)}}"
+        },
+        "response": {
+            "output": {
+                "signal_id": "{{body.signal_id}}",
+                "instance_id": "{{parameters.instanceId}}"
+            }
+        }
+    },
+    {
+        "condition": "{{parameters.signalType = 'custom'}}",
+        "url": "/instances/{{parameters.instanceId}}/signals",
+        "method": "POST",
+        "body": {
+            "signal_type": {
+                "custom": "{{parameters.customSignal}}"
+            },
+            "payload": "{{if(parameters.payload, parseJSON(parameters.payload), undefined)}}"
+        },
+        "response": {
+            "output": {
+                "signal_id": "{{body.signal_id}}",
+                "instance_id": "{{parameters.instanceId}}"
+            }
+        }
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "instanceId",
+        "type": "uuid",
+        "label": "Instance ID",
+        "required": true
+    },
+    {
+        "name": "blockId",
+        "type": "text",
+        "label": "Gate block ID",
+        "required": true,
+        "help": "`block_id` of the waiting gate (see GET /api/v1/approvals)."
+    },
+    {
+        "name": "value",
+        "type": "text",
+        "label": "Choice value",
+        "required": true,
+        "help": "One of the gate's choice values, e.g. `approve` or `reject`."
+    },
+    {
+        "name": "comment",
+        "type": "text",
+        "label": "Comment"
+    }
+]

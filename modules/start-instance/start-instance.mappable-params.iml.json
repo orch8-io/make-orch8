@@ -1,0 +1,100 @@
+[
+    {
+        "name": "sequenceId",
+        "type": "select",
+        "label": "Sequence",
+        "required": true,
+        "options": "rpc://listSequences",
+        "help": "Stored sequence version to run. Map a sequence UUID to pin a specific version."
+    },
+    {
+        "name": "namespace",
+        "type": "text",
+        "label": "Namespace",
+        "default": "default"
+    },
+    {
+        "name": "data",
+        "type": "json",
+        "label": "Input data (JSON)",
+        "help": "Becomes `context.data` \u2014 the instance input."
+    },
+    {
+        "name": "config",
+        "type": "json",
+        "label": "Config (JSON)",
+        "advanced": true,
+        "help": "Becomes `context.config` (read-only to steps)."
+    },
+    {
+        "name": "metadata",
+        "type": "json",
+        "label": "Metadata (JSON)",
+        "advanced": true,
+        "help": "Searchable top-level key/values, e.g. {\"source\":\"make\"}."
+    },
+    {
+        "name": "priority",
+        "type": "select",
+        "label": "Priority",
+        "advanced": true,
+        "options": [
+            {
+                "label": "Low",
+                "value": "Low"
+            },
+            {
+                "label": "Normal",
+                "value": "Normal"
+            },
+            {
+                "label": "High",
+                "value": "High"
+            },
+            {
+                "label": "Critical",
+                "value": "Critical"
+            }
+        ]
+    },
+    {
+        "name": "timezone",
+        "type": "timezone",
+        "label": "Timezone",
+        "advanced": true
+    },
+    {
+        "name": "idempotencyKey",
+        "type": "text",
+        "label": "Idempotency key",
+        "advanced": true,
+        "help": "A repeat request with the same key returns the existing instance (`deduplicated: true`)."
+    },
+    {
+        "name": "concurrencyKey",
+        "type": "text",
+        "label": "Concurrency key",
+        "advanced": true
+    },
+    {
+        "name": "maxConcurrency",
+        "type": "uinteger",
+        "label": "Max concurrency",
+        "advanced": true
+    },
+    {
+        "name": "nextFireAt",
+        "type": "date",
+        "label": "Start at",
+        "advanced": true,
+        "help": "Schedule the first step for a later time."
+    },
+    {
+        "name": "dryRun",
+        "type": "boolean",
+        "label": "Dry run",
+        "advanced": true,
+        "default": false,
+        "help": "Side-effecting steps return stubs; control flow runs normally."
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "name": "eventTypes",
+        "type": "select",
+        "label": "Event types",
+        "multiple": true,
+        "help": "Leave empty to receive all events.",
+        "options": [
+            {
+                "label": "Instance completed",
+                "value": "instance.completed"
+            },
+            {
+                "label": "Instance failed",
+                "value": "instance.failed"
+            },
+            {
+                "label": "SLA breached",
+                "value": "instance.sla_breached"
+            }
+        ]
+    }
+]

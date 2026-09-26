@@ -1,0 +1,14 @@
+{
+    "condition": "{{if(length(ifempty(parameters.eventTypes, emptyarray)) = 0, true, contains(parameters.eventTypes, body.event_type))}}",
+    "respond": {
+        "status": 202,
+        "type": "text",
+        "body": "accepted"
+    },
+    "output": {
+        "event_type": "{{body.event_type}}",
+        "instance_id": "{{body.instance_id}}",
+        "timestamp": "{{body.timestamp}}",
+        "data": "{{body.data}}"
+    }
+}

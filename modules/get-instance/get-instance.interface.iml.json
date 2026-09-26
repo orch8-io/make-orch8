@@ -1,0 +1,89 @@
+[
+    {
+        "name": "id",
+        "type": "text",
+        "label": "Instance ID"
+    },
+    {
+        "name": "sequence_id",
+        "type": "text",
+        "label": "Sequence ID"
+    },
+    {
+        "name": "tenant_id",
+        "type": "text",
+        "label": "Tenant ID"
+    },
+    {
+        "name": "namespace",
+        "type": "text",
+        "label": "Namespace"
+    },
+    {
+        "name": "state",
+        "type": "text",
+        "label": "State"
+    },
+    {
+        "name": "priority",
+        "type": "text",
+        "label": "Priority"
+    },
+    {
+        "name": "timezone",
+        "type": "text",
+        "label": "Timezone"
+    },
+    {
+        "name": "next_fire_at",
+        "type": "date",
+        "label": "Next fire at"
+    },
+    {
+        "name": "metadata",
+        "type": "any",
+        "label": "Metadata"
+    },
+    {
+        "name": "context",
+        "type": "collection",
+        "label": "Context",
+        "spec": [
+            {
+                "name": "data",
+                "type": "any",
+                "label": "Data"
+            },
+            {
+                "name": "config",
+                "type": "any",
+                "label": "Config"
+            }
+        ]
+    },
+    {
+        "name": "idempotency_key",
+        "type": "text",
+        "label": "Idempotency key"
+    },
+    {
+        "name": "concurrency_key",
+        "type": "text",
+        "label": "Concurrency key"
+    },
+    {
+        "name": "parent_instance_id",
+        "type": "text",
+        "label": "Parent instance ID"
+    },
+    {
+        "name": "created_at",
+        "type": "date",
+        "label": "Created at"
+    },
+    {
+        "name": "updated_at",
+        "type": "date",
+        "label": "Updated at"
+    }
+]

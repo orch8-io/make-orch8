@@ -1,0 +1,71 @@
+[
+    {
+        "name": "states",
+        "type": "select",
+        "label": "States",
+        "multiple": true,
+        "options": [
+            {
+                "label": "Scheduled",
+                "value": "scheduled"
+            },
+            {
+                "label": "Running",
+                "value": "running"
+            },
+            {
+                "label": "Waiting",
+                "value": "waiting"
+            },
+            {
+                "label": "Paused",
+                "value": "paused"
+            },
+            {
+                "label": "Completed",
+                "value": "completed"
+            },
+            {
+                "label": "Failed",
+                "value": "failed"
+            },
+            {
+                "label": "Cancelled",
+                "value": "cancelled"
+            }
+        ]
+    },
+    {
+        "name": "sequenceId",
+        "type": "select",
+        "label": "Sequence",
+        "options": "rpc://listSequences"
+    },
+    {
+        "name": "namespace",
+        "type": "text",
+        "label": "Namespace"
+    },
+    {
+        "name": "metadataKey",
+        "type": "text",
+        "label": "Metadata key",
+        "advanced": true,
+        "help": "Top-level metadata key (string equality)."
+    },
+    {
+        "name": "metadataValue",
+        "type": "text",
+        "label": "Metadata value",
+        "advanced": true
+    },
+    {
+        "name": "limit",
+        "type": "uinteger",
+        "label": "Limit",
+        "default": 100,
+        "validate": {
+            "max": 1000
+        }
+    }
+]

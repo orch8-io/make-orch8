@@ -1,0 +1,8 @@
+[
+    {
+        "type": "banner",
+        "theme": "info",
+        "title": "How to connect this webhook",
+        "text": "Orch8 has no webhook-subscription API: outbound webhooks are configured on the engine. Copy the webhook URL Make generated and add it to ORCH8_WEBHOOK_URLS (comma-separated) or [engine.webhooks].urls in orch8.toml, then restart the engine. Every configured URL receives every event for every tenant; use the event filter on the webhook and a Make filter on tenant if you share an engine."
+    }
+]
