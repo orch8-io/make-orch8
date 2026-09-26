@@ -2,11 +2,17 @@
   "name": "make-orch8",
   "version": "0.1.0",
   "private": true,
-  "description": "Orch8 custom app for Make (Integromat) — Make Apps SDK local-workspace layout",
+  "description": "Orch8 custom app for Make (Integromat) \u2014 Make Apps SDK local-workspace layout",
   "license": "MIT",
   "type": "module",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "test": "node --test test/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orch8-io/make-orch8.git"
   }
 }
